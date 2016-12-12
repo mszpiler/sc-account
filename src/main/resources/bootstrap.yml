@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: sc-account
+---
+spring:
+  profiles: default
+  cloud:
+    config:
+      uri: http://localhost:8100
+      fail-fast: true
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://sc-server-config:8100
+      fail-fast: true
